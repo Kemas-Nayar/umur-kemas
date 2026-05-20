@@ -2,6 +2,11 @@
 #include <time.h>
 #include <stdlib.h>
 
+#define tahun 2006
+#define bulan 8
+#define hari 20
+#define jam 12
+
 #ifdef _WIN32
     #include <windows.h>
     #define sleep_ms(ms) Sleep(ms)
@@ -23,15 +28,8 @@ int main(){
   time_t now = time(NULL);
   struct tm *t = localtime(&now);
 
-  double tahun = 2006;
-  double bulan = 8;
-  double hari = 20;
-  double jam = 12;
-  double menit = 30;
-
-
   while(1){
-    double birthyear = tahun + bulan/12 + hari/365 + jam/8760 + menit/525600;
+    double birthyear = tahun + bulan/12 + hari/365 + jam/8760;
 
     struct timespec ts;
     clock_gettime(CLOCK_REALTIME, &ts);
