@@ -1,5 +1,5 @@
 # umur-kemas
-umur gw saat ini😎
+how old is kemas according to your system's clock😎
 
 ```bash
 gcc main.c -o main
