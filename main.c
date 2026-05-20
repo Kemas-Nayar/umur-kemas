@@ -29,7 +29,7 @@ int main(){
   struct tm *t = localtime(&now);
 
   while(1){
-    double birthyear = tahun + bulan/12 + hari/365 + jam/8760;
+    double birthyear = tahun + bulan/12.0 + hari/365.0 + jam/8760.0;
 
     struct timespec ts;
     clock_gettime(CLOCK_REALTIME, &ts);
