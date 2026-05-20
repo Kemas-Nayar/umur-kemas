@@ -29,12 +29,14 @@ int main(){
   double jam = 12;
   double menit = 30;
 
-  double ms_sekarang = 0;
-
-
 
   while(1){
     double birthyear = tahun + bulan/12 + hari/365 + jam/8760 + menit/525600;
+
+    struct timespec ts;
+    clock_gettime(CLOCK_REALTIME, &ts);
+    struct tm *t = localtime(&ts.tv_sec);
+    double ms_sekarang = ts.tv_nsec / 1e6;
 
     double saatini = (t->tm_year + 1900) 
                     + (t->tm_mon + 1)   /12.0 
